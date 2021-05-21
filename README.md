@@ -6,8 +6,7 @@ Python script for vaccine slot notification.. Just run the .py file in your syst
 For bugs you can write to me directly
 
 Dependencies :
-pip install requests
-pip install pygame
+requests and pygame
 
 Wish you good luck :)
 
