@@ -23,7 +23,9 @@ actual_dates = [i.strftime("%d-%m-%Y") for i in list_format]
 
 while True:
     counter = 0   
-
+    mixer.init()
+    mixer.music.load('got.wav')
+    mixer.music.play()
     for pincode in pincodes:   
         for given_date in actual_dates:
 
@@ -50,6 +52,7 @@ while True:
                                         print("\t Vaccine type: ", session["vaccine"])
                                     print("\n")
                                     counter = counter + 1
+
             else:
                 print("No Response!")
                 
@@ -57,12 +60,12 @@ while True:
         print("No Vaccination slot available! For Dose 1.. If you are seeing it then it is for dose 2")
     else:
         mixer.init()
-        mixer.music.load('dingdong.wav')
+        mixer.music.load('got.wav')
         mixer.music.play()
         print("Search Completed!")
 
 
     dt = datetime.now() + timedelta(minutes=3000)
 
-    while datetime.now() < dt:             #UNHASH IT IF YOU WANT TO RUN ONCE
-        time.sleep(1)
+#    while datetime.now() < dt:             #UNHASH IT IF YOU WANT TO RUN ONCE
+#        time.sleep(1)
