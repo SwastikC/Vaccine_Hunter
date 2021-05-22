@@ -16,16 +16,15 @@ num_days = int(input("Enter the number of days from today you are looking for: "
 #num_days = 3
 print_flag = 'Y'
 print("Searching.....!!! It may take some time :)")
-
+mixer.init()
+mixer.music.load('got.wav')
+mixer.music.play()
 actual = datetime.today()
 list_format = [actual + timedelta(days=i) for i in range(num_days)]
 actual_dates = [i.strftime("%d-%m-%Y") for i in list_format]
 
 while True:
     counter = 0   
-    mixer.init()
-    mixer.music.load('got.wav')
-    mixer.music.play()
     for pincode in pincodes:   
         for given_date in actual_dates:
 
@@ -52,20 +51,23 @@ while True:
                                         print("\t Vaccine type: ", session["vaccine"])
                                     print("\n")
                                     counter = counter + 1
+                                    mixer.init()
+                                    mixer.music.load('dingdong.wav')
+                                    mixer.music.play()
 
             else:
-                print("No Response!")
+                print("COWIN SERVER IS DOWN!! OR YOUR INTERNET CONNECTION IS NOT WORKING !!")
                 
     if counter:
         print("No Vaccination slot available! For Dose 1.. If you are seeing it then it is for dose 2")
     else:
-        mixer.init()
-        mixer.music.load('got.wav')
-        mixer.music.play()
+#        mixer.init()
+#        mixer.music.load('dingdong.wav')
+#        mixer.music.play()
         print("Search Completed!")
 
 
-    dt = datetime.now() + timedelta(minutes=3000)
+    dt = datetime.now() + timedelta(minutes=1)
 
-#    while datetime.now() < dt:             #UNHASH IT IF YOU WANT TO RUN ONCE
-#        time.sleep(1)
+    while datetime.now() < dt:             #UNHASH IT IF YOU WANT TO RUN ONCE
+        time.sleep(1)
